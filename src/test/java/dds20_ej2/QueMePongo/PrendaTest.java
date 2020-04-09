@@ -1,12 +1,14 @@
-package dds20_ej2.queMePongo;
+package dds20_ej2.QueMePongo;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import dds20_ej2.queMePongo.Prenda.Categoria;
-import dds20_ej2.queMePongo.Prenda.Tipo;
+import dds20_ej2.QueMePongo.CategoriaInvalidaException;
+import dds20_ej2.QueMePongo.Prenda;
+import dds20_ej2.QueMePongo.Prenda.Categoria;
+import dds20_ej2.QueMePongo.Prenda.Tipo;
 
 public class PrendaTest {
 
