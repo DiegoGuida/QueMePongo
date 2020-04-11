@@ -2,7 +2,6 @@ package dds20_ej2.QueMePongo;
 
 public class Prenda {
 
-	//private String nombre;
 	private Tipo tipo;
 	private Categoria categoria;
 	private String tela;
@@ -22,11 +21,11 @@ public class Prenda {
 			if (tipo != Tipo.CAMISA && tipo != Tipo.REMERA)
 				throw new CategoriaInvalidaException();
 			break;
-		case CALZADO:
+		case INFERIOR:
 			if (tipo != Tipo.PANTALON)
 				throw new CategoriaInvalidaException();
 			break;
-		case INFERIOR:
+		case CALZADO:
 			if (tipo != Tipo.ZAPATOS)
 				throw new CategoriaInvalidaException();
 			break;
