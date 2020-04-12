@@ -11,9 +11,14 @@ public class Guardarropa {
 	private List<Prenda> calzado = new ArrayList<Prenda>();
 	private List<Prenda> accesorios = new ArrayList<Prenda>();
 
-	public  List<Prenda> generarAtuendos() {
+	public List<Prenda> generarAtuendos() throws PrendasInsuficientesException {
 		Random random1 = new Random();
 		List<Prenda> atuendo = new ArrayList<Prenda>();
+		if (superior == null ||  superior.isEmpty() ||
+				inferior == null ||  inferior.isEmpty() ||
+						calzado == null ||  calzado.isEmpty() ) {
+			throw new PrendasInsuficientesException();
+		}
 		atuendo.add(superior.get(random1.nextInt(superior.size())));
 		atuendo.add(inferior.get(random1.nextInt(inferior.size())));
 		atuendo.add(calzado.get(random1.nextInt(calzado.size())));

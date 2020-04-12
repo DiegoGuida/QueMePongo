@@ -16,6 +16,7 @@ public class GuardarropaTest {
 	private Prenda zapatos = new Prenda( );
 	private Prenda aros = new Prenda( );
 	private Guardarropa vestir = new Guardarropa();
+	private Guardarropa deportivo = new Guardarropa();
 
 	@Before
 	public void init() throws CategoriaInvalidaException {
@@ -33,10 +34,15 @@ public class GuardarropaTest {
 	}
 
 	@Test
-	public void generarAtuendoTest()  {
+	public void generarAtuendoTest() throws PrendasInsuficientesException  {
 		List<Prenda> atuendo = vestir.generarAtuendos();
 		Assert.assertTrue(atuendo.size()>=3);
 	}
-
+	@Test (expected=PrendasInsuficientesException.class)
+	public void prendasInsuficientesTest() throws PrendasInsuficientesException  {
+		deportivo.agregarPrendaAlGuardarropas(remera);
+		List<Prenda> atuendo = deportivo.generarAtuendos();
+		Assert.assertTrue(atuendo.size()>=3);
+	}
 
 }
